@@ -1,0 +1,56 @@
+Planeta(código, nome, massa, raio, niv_rad, temp_media, amp_term, dist_terra, pressão, sist_solar!)
+    sist_solar → SistemaSolar(código)
+    
+Lua(código, quantidade, nome, massa, dist_planeta, luaprim_cod, luaprim_qtd)
+    código → Planeta(código)
+    (luaprim_codigo, luaprim_qtd)→ Lua(código, quantidade)
+
+Elemento(fórmula, nome)
+
+CompAtmostérica(código, fórmula, percentual)
+    código → Planeta(código)
+    fórmula → Elemento(fórmula)
+
+Instituição(código, nome, local)
+
+Pesquisador(cadastro, nome, equipe)
+
+Trabalha(cad_pesquisador, cod_instituição, data_início)
+    cad_pesquisador → Pesquisador(código)
+    cod_instituição → Instituição(código)
+
+Pesquisa(registro, título, data_início, data_fim, descrição)
+
+Estuda(cod_planeta, cad_pesquisador, registro_pesquisa)
+    cod_planeta → Planeta(código)
+    cad_pesquisador → Pesquisador(código)
+    registro_pesquisa → Pesquisa(registro)
+
+Financiamento(cadastro, valor)
+
+Empresa(cadastro, empresa)
+    cadastro → Financiamento(cadastro)
+
+Recebe(cod_planeta, cad_pesquisador, registro_pesquisa, cadastro, data_início, duração)
+    (cod_planeta, cad_pesquisador, registro_pesquisa) → Estuda(cod_planeta, cod_obsevador, registro_pesquisa)
+    cadastro→ Financiamento(cadastro)
+
+SistemaSolar(código, nome, galáxia!)
+    galáxia → Galáxia(código)
+
+Estrela(código, nome, raio, massa, tipo, sistema)
+    sistema → SistemaSolar(código)
+
+BuracoNegro(código, nome, massa)
+
+Galáxia(código, nome, [buraco_negro]!)
+    buraco_negro → BuracoNegro(código)
+
+GaláxiaElíptica(código, semieixo_maior, semieixo_menor, dist_focal)
+    código → Galáxia(código)
+
+GaláxiaEspiral(código, raio)
+    código → Galáxia(código)
+
+GaláxiaIrregular(código, formato)
+    código → Galáxia(código)
