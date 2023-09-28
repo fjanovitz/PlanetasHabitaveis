@@ -1,5 +1,5 @@
 # Planetas Habitaveis
-Projeto de Banco de Dados para armazenar Planetas Habitáveis e suas características, feito para a cadeira de Gerenciamento de Dados e Informação.
+Projeto de Banco de Dados para armazenar planetas habitáveis e suas características, bem como outras informações importantes. Este projeto foi feito para a cadeira de Gerenciamento de Dados e Informação e pôs em prática todos os conceitos estudados em sala.
 
 Grupo
 - Frederico Janovitz Novais
